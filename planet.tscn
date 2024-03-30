@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bulva5lwvqke6"]
+
+[ext_resource type="Texture2D" uid="uid://0var371xp718" path="res://icon.svg" id="1_f2m26"]
+[ext_resource type="Script" path="res://planet.gd" id="1_p8mon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vga8"]
+radius = 81.0
+
+[node name="planet" type="Node2D"]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_p8mon")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(0, 7.62939e-06)
+texture = ExtResource("1_f2m26")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_0vga8")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
