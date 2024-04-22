@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://blq5242c8dro0"]
+
+[ext_resource type="Script" path="res://world_demo.gd" id="1_ejy2t"]
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="2_b3e4i"]
+[ext_resource type="PackedScene" uid="uid://b477hpmhy3eld" path="res://level_ui.tscn" id="2_hiqrd"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="2_k41mr"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="4_l1gwv"]
+
+[node name="tutorial_1" type="Node2D"]
+script = ExtResource("1_ejy2t")
+current_lvl_int = 1
+next_lvl = "res://tutorial_2.tscn"
+self_lvl = "res://tutorial_1.tscn"
+
+[node name="ColorRect" parent="." instance=ExtResource("2_b3e4i")]
+
+[node name="planet_reworked" parent="." instance=ExtResource("2_k41mr")]
+position = Vector2(64, 96)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("2_k41mr")]
+position = Vector2(128, 48)
+
+[node name="rock_short" parent="." instance=ExtResource("4_l1gwv")]
+position = Vector2(48, 48)
+
+[node name="rock_short2" parent="." instance=ExtResource("4_l1gwv")]
+position = Vector2(160, 104)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="level_ui" parent="CanvasLayer" instance=ExtResource("2_hiqrd")]
+descrip = "To complete a level
+you need to connect
+all planets together"
+tip = "Drag a line from any planet"

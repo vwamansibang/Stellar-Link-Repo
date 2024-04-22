@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy0ydvloyylf1"]
+
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="1_mhj8e"]
+[ext_resource type="Script" path="res://world_demo.gd" id="1_u7p5w"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="2_28sue"]
+[ext_resource type="PackedScene" uid="uid://c67ribuqykyv4" path="res://rock_big.tscn" id="3_4dbpv"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="4_gnnva"]
+[ext_resource type="PackedScene" uid="uid://dtg5r08u7s75i" path="res://drone.tscn" id="5_2ahe4"]
+[ext_resource type="PackedScene" uid="uid://b477hpmhy3eld" path="res://level_ui.tscn" id="6_o817e"]
+
+[node name="tutorial_4" type="Node2D"]
+script = ExtResource("1_u7p5w")
+current_lvl_int = 4
+self_lvl = "res://tutorial_4.tscn"
+
+[node name="ColorRect" parent="." instance=ExtResource("1_mhj8e")]
+
+[node name="planet_reworked" parent="." instance=ExtResource("2_28sue")]
+position = Vector2(48, 40)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("2_28sue")]
+position = Vector2(144, 40)
+
+[node name="rock_big" parent="." instance=ExtResource("3_4dbpv")]
+position = Vector2(96, 56)
+
+[node name="rock_big2" parent="." instance=ExtResource("3_4dbpv")]
+position = Vector2(152, 96)
+
+[node name="rock_short" parent="." instance=ExtResource("4_gnnva")]
+position = Vector2(40, 104)
+
+[node name="drone" parent="." instance=ExtResource("5_2ahe4")]
+position = Vector2(24, 56)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="level_ui" parent="CanvasLayer" instance=ExtResource("6_o817e")]
+leveltext = "- - - Level 4 - - -"
+descrip = "Be careful not to crash
+the satellites because
+they are very sensitive"
+tip = "[C] Reset Level"

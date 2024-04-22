@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvqq5nft2u3og"]
+
+[ext_resource type="Script" path="res://world_demo.gd" id="1_kce73"]
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="2_nm4tn"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="3_6ms6j"]
+[ext_resource type="PackedScene" uid="uid://dtg5r08u7s75i" path="res://drone.tscn" id="4_udtwt"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="5_cephi"]
+[ext_resource type="PackedScene" uid="uid://c67ribuqykyv4" path="res://rock_big.tscn" id="6_2wnra"]
+[ext_resource type="PackedScene" uid="uid://b477hpmhy3eld" path="res://level_ui.tscn" id="7_0kapk"]
+
+[node name="tutorial_3" type="Node2D"]
+script = ExtResource("1_kce73")
+current_lvl_int = 3
+next_lvl = "res://tutorial_4.tscn"
+self_lvl = "res://tutorial_3.tscn"
+
+[node name="ColorRect" parent="." instance=ExtResource("2_nm4tn")]
+
+[node name="planet_reworked" parent="." instance=ExtResource("3_6ms6j")]
+position = Vector2(48, 48)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("3_6ms6j")]
+position = Vector2(144, 112)
+
+[node name="drone" parent="." instance=ExtResource("4_udtwt")]
+position = Vector2(168, 80)
+
+[node name="rock_short" parent="." instance=ExtResource("5_cephi")]
+position = Vector2(64, 96)
+
+[node name="rock_big" parent="." instance=ExtResource("6_2wnra")]
+position = Vector2(104, 88)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="level_ui" parent="CanvasLayer" instance=ExtResource("7_0kapk")]
+leveltext = "- - - Level 3 - - -"
+descrip = "You can use satellites
+to extend a different point
+to create a link"
+tip = "[C] Reset Level"

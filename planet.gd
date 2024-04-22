@@ -1,26 +1,43 @@
 extends Node2D
 
+signal interact
+signal mouse_released
+signal planet_drag(pos)
+signal overlapped(pos)
+
 var mouse_overlapped = false
 
-# Called when the node enters the scene tree for the first time.
+@onready var anim = $AnimationPlayer
+@onready var icon = $Icon
+
+@export var sprite_img = 0
+@export var node_held = false
+
 func _ready():
-	pass # Replace with function body.
+	icon.frame = sprite_img
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if mouse_overlapped:
-		var tween = create_tween()
-		tween.tween_property(self, "scale", 2.4, 0.5)
-	else:
-		var tween = create_tween()
-		tween.tween_property(self, "scale", 1, 0.5)
+	if Input.is_action_just_released("click"):
+		mouse_released.emit()
+		
+	#TODO: Node is definitely held, but remote not showing it dunno why
+	if node_held:
+		planet_drag.emit(self.position)
+
 
 func _on_area_2d_mouse_entered():
 	mouse_overlapped = true
-	print("Mouse_Overlapped")
-
+	overlapped.emit(self.position)
+	anim.play("selected")
 
 func _on_area_2d_mouse_exited():
 	mouse_overlapped = false
-	print("Mouse_Exited")
+	anim.play("unselected")
+
+
+func _on_button_pressed():
+	node_held = true
+#	print("node_held = true")
+	await mouse_released
+#	print("node_held = false")
+	node_held = false

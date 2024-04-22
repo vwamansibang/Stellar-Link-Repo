@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkyhr0sh1m1yp"]
+
+[ext_resource type="Script" path="res://world_demo.gd" id="1_fnsgl"]
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="2_lynfv"]
+[ext_resource type="PackedScene" uid="uid://b477hpmhy3eld" path="res://level_ui.tscn" id="3_7ywjs"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="4_dcokt"]
+[ext_resource type="PackedScene" uid="uid://c67ribuqykyv4" path="res://rock_big.tscn" id="5_eo0jy"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="6_vv2g3"]
+[ext_resource type="PackedScene" uid="uid://dtg5r08u7s75i" path="res://drone.tscn" id="7_afakw"]
+
+[node name="level_16" type="Node2D"]
+script = ExtResource("1_fnsgl")
+current_lvl_int = 16
+self_lvl = "res://level_16.tscn"
+
+[node name="ColorRect" parent="." instance=ExtResource("2_lynfv")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="level_ui" parent="CanvasLayer" instance=ExtResource("3_7ywjs")]
+leveltext = "- - - Level 16 - - -"
+
+[node name="planet_reworked3" parent="." instance=ExtResource("4_dcokt")]
+position = Vector2(174, 44)
+
+[node name="planet_reworked7" parent="." instance=ExtResource("4_dcokt")]
+position = Vector2(168, 145)
+
+[node name="planet_reworked9" parent="." instance=ExtResource("4_dcokt")]
+position = Vector2(32, 144)
+
+[node name="planet_reworked5" parent="." instance=ExtResource("4_dcokt")]
+position = Vector2(38, 29)
+
+[node name="planet_reworked8" parent="." instance=ExtResource("4_dcokt")]
+position = Vector2(110, 23)
+
+[node name="rock_big6" parent="." instance=ExtResource("5_eo0jy")]
+position = Vector2(37, 106)
+
+[node name="rock_big7" parent="." instance=ExtResource("5_eo0jy")]
+position = Vector2(175, 95)
+
+[node name="rock_short9" parent="." instance=ExtResource("6_vv2g3")]
+position = Vector2(70, 92)
+
+[node name="rock_short10" parent="." instance=ExtResource("6_vv2g3")]
+position = Vector2(70, 123)
+
+[node name="rock_short14" parent="." instance=ExtResource("6_vv2g3")]
+position = Vector2(71, 24)
+
+[node name="rock_short12" parent="." instance=ExtResource("6_vv2g3")]
+position = Vector2(141, 161)
+
+[node name="rock_short13" parent="." instance=ExtResource("6_vv2g3")]
+position = Vector2(144, 30)
+
+[node name="drone" parent="." instance=ExtResource("7_afakw")]
+position = Vector2(64, 160)
+
+[node name="drone2" parent="." instance=ExtResource("7_afakw")]
+position = Vector2(40, 56)

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqxf4r6sulmld"]
+
+[ext_resource type="Texture2D" uid="uid://0var371xp718" path="res://icon.svg" id="1_8gvcf"]
+[ext_resource type="Script" path="res://test_tweening.gd" id="1_mqf0t"]
+[ext_resource type="FontFile" uid="uid://3c0rg33qxat7" path="res://pixelmix.ttf" id="2_2le1o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mqf0t")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 88.0
+offset_right = 114.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("2_2le1o")
+theme_override_font_sizes/font_size = 8
+text = "DICKNBALLS"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8gvcf")

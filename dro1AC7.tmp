@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtg5r08u7s75i"]
+
+[ext_resource type="Texture2D" uid="uid://cs106724u5rbu" path="res://planets_drone.png" id="2_20g80"]
+[ext_resource type="Script" path="res://drone.gd" id="2_ubjol"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egcdd"]
+size = Vector2(18, 12)
+
+[node name="drone" type="Node2D"]
+z_index = 5
+script = ExtResource("2_ubjol")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_20g80")
+
+[node name="Area2D" type="Area2D" parent="." groups=["drones_group"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_egcdd")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited" flags=18]

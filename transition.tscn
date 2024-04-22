@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://23ed5igexrym"]
+
+[ext_resource type="Script" path="res://test_trans_1.gd" id="1_uddc4"]
+[ext_resource type="Texture2D" uid="uid://cmut4gtamq2ku" path="res://planets_trans.png" id="2_asmqx"]
+
+[node name="transition" type="Node2D"]
+top_level = true
+z_index = 25
+script = ExtResource("1_uddc4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 32
+
+[node name="trans" type="Sprite2D" parent="CanvasLayer"]
+texture = ExtResource("2_asmqx")
+offset = Vector2(96, 96)

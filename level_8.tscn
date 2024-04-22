@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://oe41gd67qlwq"]
+
+[ext_resource type="Script" path="res://world_demo.gd" id="1_yukl5"]
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="2_xfvmx"]
+[ext_resource type="PackedScene" uid="uid://b477hpmhy3eld" path="res://level_ui.tscn" id="3_xessy"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="4_4ytah"]
+[ext_resource type="PackedScene" uid="uid://c67ribuqykyv4" path="res://rock_big.tscn" id="5_ijmh1"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="6_sblce"]
+[ext_resource type="PackedScene" uid="uid://dtg5r08u7s75i" path="res://drone.tscn" id="7_x6ar6"]
+
+[node name="level_8" type="Node2D"]
+script = ExtResource("1_yukl5")
+current_lvl_int = 8
+next_lvl = "res://level_9.tscn"
+self_lvl = "res://level_8.tscn"
+
+[node name="ColorRect" parent="." instance=ExtResource("2_xfvmx")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="level_ui" parent="CanvasLayer" instance=ExtResource("3_xessy")]
+leveltext = "- - - Level 8 - - -"
+
+[node name="planet_reworked" parent="." instance=ExtResource("4_4ytah")]
+position = Vector2(40, 40)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("4_4ytah")]
+position = Vector2(64, 160)
+
+[node name="planet_reworked3" parent="." instance=ExtResource("4_4ytah")]
+position = Vector2(160, 40)
+
+[node name="rock_big" parent="." instance=ExtResource("5_ijmh1")]
+position = Vector2(40, 88)
+
+[node name="rock_big3" parent="." instance=ExtResource("5_ijmh1")]
+position = Vector2(96, 136)
+
+[node name="rock_big4" parent="." instance=ExtResource("5_ijmh1")]
+position = Vector2(80, 32)
+
+[node name="rock_short" parent="." instance=ExtResource("6_sblce")]
+position = Vector2(104, 96)
+
+[node name="rock_short2" parent="." instance=ExtResource("6_sblce")]
+position = Vector2(40, 128)
+
+[node name="rock_short3" parent="." instance=ExtResource("6_sblce")]
+position = Vector2(168, 80)
+
+[node name="rock_short5" parent="." instance=ExtResource("6_sblce")]
+position = Vector2(168, 160)
+
+[node name="rock_short4" parent="." instance=ExtResource("6_sblce")]
+position = Vector2(128, 32)
+
+[node name="drone" parent="." instance=ExtResource("7_x6ar6")]
+position = Vector2(96, 176)

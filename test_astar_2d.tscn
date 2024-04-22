@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://rswc5lnb7hr5"]
+
+[ext_resource type="Script" path="res://test_astar_2d.gd" id="1_0xv6a"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="1_01x65"]
+[ext_resource type="PackedScene" uid="uid://dtg5r08u7s75i" path="res://drone.tscn" id="3_5w1me"]
+
+[node name="test_astar2d" type="Node2D"]
+script = ExtResource("1_0xv6a")
+
+[node name="planet_reworked" parent="." instance=ExtResource("1_01x65")]
+position = Vector2(152, 120)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("1_01x65")]
+position = Vector2(128, 48)
+
+[node name="planet_reworked3" parent="." instance=ExtResource("1_01x65")]
+position = Vector2(48, 64)
+
+[node name="drone" parent="." instance=ExtResource("3_5w1me")]
+position = Vector2(72, 128)
+
+[node name="drone2" parent="." instance=ExtResource("3_5w1me")]
+position = Vector2(88, 32)

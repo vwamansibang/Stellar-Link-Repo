@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://fq4t3a3ob0hm"]
+
+[ext_resource type="PackedScene" uid="uid://bulva5lwvqke6" path="res://planet.tscn" id="1_jgcmg"]
+[ext_resource type="Script" path="res://test_connectworlds.gd" id="1_yswcp"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_yswcp")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 1.0
+
+[node name="planet" parent="." instance=ExtResource("1_jgcmg")]
+position = Vector2(32, 40)
+
+[node name="planet2" parent="." instance=ExtResource("1_jgcmg")]
+position = Vector2(88, 80)
+sprite_img = 2
+
+[connection signal="mouse_released" from="planet" to="." method="_on_planet_mouse_released"]
+[connection signal="overlapped" from="planet" to="." method="_on_planet_overlapped"]
+[connection signal="planet_drag" from="planet" to="." method="_on_planet_planet_drag"]
+[connection signal="mouse_released" from="planet2" to="." method="_on_planet_mouse_released"]
+[connection signal="overlapped" from="planet2" to="." method="_on_planet_overlapped"]
+[connection signal="planet_drag" from="planet2" to="." method="_on_planet_planet_drag"]

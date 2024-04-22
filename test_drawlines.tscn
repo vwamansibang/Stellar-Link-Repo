@@ -13,3 +13,5 @@ texture_mode = 1
 
 [node name="planet" parent="." instance=ExtResource("2_uw6cq")]
 position = Vector2(32, 40)
+
+[connection signal="interact" from="planet" to="." method="_on_planet_interact"]

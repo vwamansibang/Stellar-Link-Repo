@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqsh03fhfxguk"]
+
+[ext_resource type="Script" path="res://world_demo.gd" id="1_k3oi0"]
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="2_oup1w"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="3_1u2wy"]
+[ext_resource type="PackedScene" uid="uid://c67ribuqykyv4" path="res://rock_big.tscn" id="4_3qbyy"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="5_vw1ox"]
+[ext_resource type="PackedScene" uid="uid://b477hpmhy3eld" path="res://level_ui.tscn" id="6_ifko4"]
+
+[node name="level_5" type="Node2D"]
+script = ExtResource("1_k3oi0")
+current_lvl_int = 5
+next_lvl = "res://level_6.tscn"
+self_lvl = "res://level_5.tscn"
+
+[node name="ColorRect" parent="." instance=ExtResource("2_oup1w")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="level_ui" parent="CanvasLayer" instance=ExtResource("6_ifko4")]
+leveltext = "- - - Level 5 - - -"
+
+[node name="planet_reworked" parent="." instance=ExtResource("3_1u2wy")]
+position = Vector2(112, 40)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("3_1u2wy")]
+position = Vector2(40, 88)
+
+[node name="planet_reworked3" parent="." instance=ExtResource("3_1u2wy")]
+position = Vector2(152, 152)
+
+[node name="rock_big" parent="." instance=ExtResource("4_3qbyy")]
+position = Vector2(128, 80)
+
+[node name="rock_big2" parent="." instance=ExtResource("4_3qbyy")]
+position = Vector2(152, 40)
+
+[node name="rock_short" parent="." instance=ExtResource("5_vw1ox")]
+position = Vector2(96, 168)
+
+[node name="rock_short2" parent="." instance=ExtResource("5_vw1ox")]
+position = Vector2(48, 144)
+
+[node name="rock_short3" parent="." instance=ExtResource("5_vw1ox")]
+position = Vector2(40, 32)
+
+[node name="rock_short4" parent="." instance=ExtResource("5_vw1ox")]
+position = Vector2(168, 104)

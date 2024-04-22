@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6lkl31rsh8qd"]
+
+[ext_resource type="PackedScene" uid="uid://bulva5lwvqke6" path="res://planet.tscn" id="1_67hkw"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="planet" parent="." instance=ExtResource("1_67hkw")]
+position = Vector2(24, 64)
+
+[node name="planet2" parent="." instance=ExtResource("1_67hkw")]
+position = Vector2(96, 64)
+sprite_img = 0

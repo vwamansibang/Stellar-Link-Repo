@@ -1,0 +1,436 @@
+[gd_scene load_steps=17 format=3 uid="uid://swfk2jfb84dg"]
+
+[ext_resource type="Texture2D" uid="uid://dos0ga4rfy4is" path="res://planet_level_select.png" id="1_2ni3i"]
+[ext_resource type="Script" path="res://select_level.gd" id="1_f6uwf"]
+[ext_resource type="FontFile" uid="uid://3c0rg33qxat7" path="res://pixelmix.ttf" id="2_oyyd5"]
+[ext_resource type="StyleBox" uid="uid://cbicrex43smuy" path="res://lvl_normal.tres" id="3_dfefm"]
+[ext_resource type="StyleBox" uid="uid://nw2035aih8eb" path="res://tut_normal.tres" id="4_c0qc0"]
+[ext_resource type="StyleBox" uid="uid://bpg5lxrjxvphm" path="res://lvl_hover.tres" id="4_g8wxq"]
+[ext_resource type="StyleBox" uid="uid://cv204i80b67w4" path="res://tut_hover.tres" id="5_b2u1u"]
+[ext_resource type="StyleBox" uid="uid://col8o0jdra7om" path="res://lvl_press.tres" id="5_t8wq0"]
+[ext_resource type="StyleBox" uid="uid://bhrkcxo8v5ld4" path="res://remove_focus.tres" id="6_lv4mb"]
+[ext_resource type="StyleBox" uid="uid://rruxy8xyoxas" path="res://tut_press.tres" id="6_pumne"]
+[ext_resource type="StyleBox" uid="uid://c3l5ty1irxcjf" path="res://btn_normal.tres" id="7_4kptt"]
+[ext_resource type="Script" path="res://Button.gd" id="8_82qw1"]
+[ext_resource type="StyleBox" uid="uid://80rt25n1s11n" path="res://btn_hover.tres" id="8_ixbpb"]
+[ext_resource type="StyleBox" uid="uid://q7jjtwp17o42" path="res://lvl_disabled.tres" id="8_ria4w"]
+[ext_resource type="StyleBox" uid="uid://gjtgppvyvvkr" path="res://btn_press.tres" id="9_d6adx"]
+[ext_resource type="StyleBox" uid="uid://yiy2bt3t8etd" path="res://btn_hover_blue.tres" id="14_ewk2t"]
+
+[node name="select_level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f6uwf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 211.0
+offset_bottom = 202.0
+mouse_filter = 2
+color = Color(0.0862745, 0.0901961, 0.101961, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_2ni3i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("4_c0qc0")
+theme_override_styles/hover = ExtResource("5_b2u1u")
+theme_override_styles/pressed = ExtResource("6_pumne")
+theme_override_styles/disabled = ExtResource("6_pumne")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+text = "1"
+script = ExtResource("8_82qw1")
+level_num = 1
+level_scene = "res://tutorial_1.tscn"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("4_c0qc0")
+theme_override_styles/hover = ExtResource("5_b2u1u")
+theme_override_styles/pressed = ExtResource("6_pumne")
+theme_override_styles/disabled = ExtResource("6_pumne")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "2"
+script = ExtResource("8_82qw1")
+level_num = 2
+level_scene = "res://tutorial_2.tscn"
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("4_c0qc0")
+theme_override_styles/hover = ExtResource("5_b2u1u")
+theme_override_styles/pressed = ExtResource("6_pumne")
+theme_override_styles/disabled = ExtResource("6_pumne")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "3"
+script = ExtResource("8_82qw1")
+level_num = 3
+level_scene = "res://tutorial_3.tscn"
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 0.819608, 0, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("4_c0qc0")
+theme_override_styles/hover = ExtResource("5_b2u1u")
+theme_override_styles/pressed = ExtResource("6_pumne")
+theme_override_styles/disabled = ExtResource("6_pumne")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "4"
+script = ExtResource("8_82qw1")
+level_num = 4
+level_scene = "res://tutorial_4.tscn"
+
+[node name="BoxContainer" type="BoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+text = "Finish tutorials
+to Unlock More"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="Button5" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+text = "5
+"
+script = ExtResource("8_82qw1")
+level_num = 5
+level_scene = "res://level_5.tscn"
+
+[node name="Button6" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "6
+"
+script = ExtResource("8_82qw1")
+level_num = 6
+level_scene = "res://level_6.tscn"
+
+[node name="Button7" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "7
+"
+script = ExtResource("8_82qw1")
+level_num = 7
+level_scene = "res://level_7.tscn"
+
+[node name="Button8" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "8
+"
+script = ExtResource("8_82qw1")
+level_num = 8
+level_scene = "res://level_8.tscn"
+
+[node name="Button9" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "9
+"
+script = ExtResource("8_82qw1")
+level_num = 9
+level_scene = "res://level_9.tscn"
+
+[node name="Button10" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "10
+"
+script = ExtResource("8_82qw1")
+level_num = 10
+level_scene = "res://level_10.tscn"
+
+[node name="Button11" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "11
+"
+script = ExtResource("8_82qw1")
+level_num = 11
+level_scene = "res://level_11.tscn"
+
+[node name="Button12" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "12"
+script = ExtResource("8_82qw1")
+level_num = 12
+level_scene = "res://level_12.tscn"
+
+[node name="Button13" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "13
+"
+script = ExtResource("8_82qw1")
+level_num = 13
+level_scene = "res://level_13.tscn"
+
+[node name="Button14" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "14
+"
+script = ExtResource("8_82qw1")
+level_num = 14
+level_scene = "res://level_14.tscn"
+
+[node name="Button15" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "15
+"
+script = ExtResource("8_82qw1")
+level_num = 15
+level_scene = "res://level_15.tscn"
+
+[node name="Button16" type="Button" parent="VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_dfefm")
+theme_override_styles/hover = ExtResource("4_g8wxq")
+theme_override_styles/pressed = ExtResource("5_t8wq0")
+theme_override_styles/disabled = ExtResource("8_ria4w")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+disabled = true
+text = "16
+"
+script = ExtResource("8_82qw1")
+level_num = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="menu_btn" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("7_4kptt")
+theme_override_styles/hover = ExtResource("14_ewk2t")
+theme_override_styles/pressed = ExtResource("9_d6adx")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+text = "Return to Menu"
+
+[node name="reset_btn" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("7_4kptt")
+theme_override_styles/hover = ExtResource("8_ixbpb")
+theme_override_styles/pressed = ExtResource("9_d6adx")
+theme_override_styles/focus = ExtResource("6_lv4mb")
+text = "!!!Reset!!!"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="VBoxContainer/HBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/menu_btn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/VBoxContainer/reset_btn" to="." method="_on_reset_btn_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://d2xvenv5m1fv"]
+
+[ext_resource type="Script" path="res://world_demo.gd" id="1_0v836"]
+[ext_resource type="FontFile" uid="uid://3c0rg33qxat7" path="res://pixelmix.ttf" id="1_tqsrs"]
+[ext_resource type="PackedScene" uid="uid://cvot4nwv8gcqs" path="res://planet_reworked.tscn" id="1_xbeaj"]
+[ext_resource type="Texture2D" uid="uid://dixujapj63dp4" path="res://planet_bg.png" id="2_pfpr0"]
+[ext_resource type="PackedScene" uid="uid://dtg5r08u7s75i" path="res://drone.tscn" id="4_pke4h"]
+[ext_resource type="PackedScene" uid="uid://cwh7dcdqhvk2n" path="res://rock_short.tscn" id="6_ww3qh"]
+[ext_resource type="PackedScene" uid="uid://c67ribuqykyv4" path="res://rock_big.tscn" id="7_16gwq"]
+
+[node name="test_linerework" type="Node2D"]
+script = ExtResource("1_0v836")
+self_lvl = "res://test_linerework.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+scale = Vector2(6.22222, 6.22222)
+texture = ExtResource("2_pfpr0")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 144.0
+offset_right = 177.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("1_tqsrs")
+theme_override_font_sizes/font_size = 8
+text = "[Z] - Undo Prev
+[X] - Clear All 
+[C] - Reset Scene
+[Esc] - Quit Scene"
+
+[node name="planet_reworked" parent="." instance=ExtResource("1_xbeaj")]
+position = Vector2(160, 88)
+
+[node name="planet_reworked2" parent="." instance=ExtResource("1_xbeaj")]
+position = Vector2(72, 128)
+sprite_img = 1
+
+[node name="planet_reworked3" parent="." instance=ExtResource("1_xbeaj")]
+position = Vector2(56, 40)
+sprite_img = 2
+
+[node name="drone" parent="." instance=ExtResource("4_pke4h")]
+position = Vector2(40, 88)
+
+[node name="drone2" parent="." instance=ExtResource("4_pke4h")]
+position = Vector2(136, 24)
+
+[node name="rock_big" parent="." instance=ExtResource("7_16gwq")]
+position = Vector2(88, 64)
+
+[node name="rock_short" parent="." instance=ExtResource("6_ww3qh")]
+position = Vector2(144, 152)
