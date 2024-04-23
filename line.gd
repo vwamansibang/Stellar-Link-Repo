@@ -56,6 +56,8 @@ func _process(delta):
 				auto.carrying_line = false
 				fade_away_die()
 			else:
+				audio_mega.get_node("line_drop").play()
+				
 				self.points[1] = auto.pinpoint
 				line_connected = true
 				auto.carrying_line = false
@@ -75,6 +77,8 @@ func fade_away_die():
 	tween_boing.set_ease(Tween.EASE_IN_OUT)
 	tween_boing.set_trans(Tween.TRANS_SINE)
 	tween_boing.tween_property(self, "width", 0, 0.36)
+	
+	audio_mega.get_node("fadefx").play()
 	
 	await tween_boing.finished
 	remove_from_group("lines_group")

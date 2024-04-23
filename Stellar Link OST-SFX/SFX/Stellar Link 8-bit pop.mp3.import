@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btocq52qfv2hy"
+path="res://.godot/imported/Stellar Link 8-bit pop.mp3-2397dc7943e777fa011162e8b1fd41c6.mp3str"
+
+[deps]
+
+source_file="res://Stellar Link OST-SFX/SFX/Stellar Link 8-bit pop.mp3"
+dest_files=["res://.godot/imported/Stellar Link 8-bit pop.mp3-2397dc7943e777fa011162e8b1fd41c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

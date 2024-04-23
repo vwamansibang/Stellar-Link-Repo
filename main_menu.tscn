@@ -95,6 +95,7 @@ button_mask = 3
 text = "Credits"
 
 [node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
@@ -110,4 +111,5 @@ button_mask = 3
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

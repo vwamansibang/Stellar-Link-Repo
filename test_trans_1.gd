@@ -15,6 +15,7 @@ func play_trans():
 		return
 	prevent_repeat = true
 	
+#	audio_mega.get_node("fadefx").play()
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_QUAD)

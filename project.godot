@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 auto="*res://auto.gd"
 load_trans="*res://transition.tscn"
+audio_mega="*res://audio_mega.tscn"
 
 [display]
 

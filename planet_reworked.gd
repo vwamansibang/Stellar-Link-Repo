@@ -31,11 +31,14 @@ func _process(_delta):
 			carried_planet = true
 		pop_up()
 		planet_select()
+		
 	if not mouse_collided and not auto.all_points_connected	:
 		if not auto.carrying_line:
+			audio_mega.get_node("ring_shrink").play()
 			pop_down()
 			planet_deselect()
 		elif not carried_planet:
+			audio_mega.get_node("ring_shrink").play()
 			pop_down()
 			planet_deselect()
 			
@@ -47,6 +50,7 @@ func _process(_delta):
 #		planet_deselect()
 
 func _on_area_2d_mouse_entered():
+	audio_mega.get_node("ring_grow").play()
 	mouse_collided = true
 	auto.pinpoint = position
 	planet_select()
@@ -62,6 +66,8 @@ func _on_button_pressed():
 	line_scene.points[0] = auto.pinpoint
 	line_scene.points[1] = auto.pinpoint
 	get_tree().get_root().add_child(line_scene)
+	
+	audio_mega.get_node("line_drag").play()
 
 func planet_select():
 	var tween_select = create_tween()
@@ -79,6 +85,7 @@ func planet_deselect():
 	tween_select.set_trans(Tween.TRANS_SPRING)
 	tween_select.tween_property(ring, "scale", ring_hide, 5)
 	
+	
 func pop_up():
 	var tween_resize = create_tween()
 	tween_resize.set_ease(Tween.EASE_OUT)
@@ -90,3 +97,4 @@ func pop_down():
 	tween_resize.set_ease(Tween.EASE_OUT_IN)
 	tween_resize.set_trans(Tween.TRANS_SPRING)
 	tween_resize.tween_property(self, "scale", vec2, 3)
+	

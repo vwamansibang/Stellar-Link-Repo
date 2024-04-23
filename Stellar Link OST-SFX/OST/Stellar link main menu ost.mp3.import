@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cajb5vsjn58ee"
+path="res://.godot/imported/Stellar link main menu ost.mp3-540b4338cbf778dbaebc6280c9a9aab3.mp3str"
+
+[deps]
+
+source_file="res://Stellar Link OST-SFX/OST/Stellar link main menu ost.mp3"
+dest_files=["res://.godot/imported/Stellar link main menu ost.mp3-540b4338cbf778dbaebc6280c9a9aab3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.036
+bpm=0.0
+beat_count=0
+bar_beats=4

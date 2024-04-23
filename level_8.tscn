@@ -34,13 +34,10 @@ position = Vector2(160, 40)
 position = Vector2(40, 88)
 
 [node name="rock_big3" parent="." instance=ExtResource("5_ijmh1")]
-position = Vector2(96, 136)
+position = Vector2(106, 138)
 
 [node name="rock_big4" parent="." instance=ExtResource("5_ijmh1")]
 position = Vector2(80, 32)
-
-[node name="rock_short" parent="." instance=ExtResource("6_sblce")]
-position = Vector2(104, 96)
 
 [node name="rock_short2" parent="." instance=ExtResource("6_sblce")]
 position = Vector2(40, 128)
@@ -55,4 +52,4 @@ position = Vector2(168, 160)
 position = Vector2(128, 32)
 
 [node name="drone" parent="." instance=ExtResource("7_x6ar6")]
-position = Vector2(96, 176)
+position = Vector2(167, 117)

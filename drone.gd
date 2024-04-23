@@ -47,6 +47,8 @@ func _process(delta):
 	if direc == arr[0]:
 		rotation = lerp_angle(rotation, 0, 2.5 * delta)
 	if obj_selected:
+		if !get_tree().get_nodes_in_group("drones_group"+append_str).is_empty():
+			audio_mega.get_node("ring_shrink").play()
 		global_position = lerp(global_position, get_global_mouse_position(), 15 * delta)
 		kill_list()
 		if direc == arr[2]:
@@ -141,5 +143,7 @@ func _on_area_2d_area_entered(area):
 	instance.position = self.position
 	instance.rotation = self.rotation
 	get_tree().get_root().add_child(instance)
+	
+	audio_mega.get_node("boomfx").play()
 	kill_list()
 	queue_free()

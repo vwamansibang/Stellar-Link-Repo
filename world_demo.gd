@@ -17,6 +17,7 @@ var total_lines = 0
 @export var self_lvl : String
 
 func _ready():
+	audio_mega.ingame = true
 	auto.current_lvl = current_lvl_int
 	if next_lvl.length() != 0:
 		auto.next_scene = next_lvl
@@ -88,9 +89,9 @@ func _process(delta):
 		else:
 			line_arr[-1].fade_away_die()
 			renew_line_connections()
-			
-	if Input.is_action_just_pressed("quit"):
-		get_tree().quit()
+#
+#	if Input.is_action_just_pressed("quit"):
+#		get_tree().quit()
 
 	
 func check_lines_all_connected():

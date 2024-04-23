@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://txoyhrp3n3g1"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_4pdwb"]
+[ext_resource type="PackedScene" uid="uid://cow2tsgg31ubf" path="res://bg_rect.tscn" id="1_gn2yp"]
+[ext_resource type="FontFile" uid="uid://3c0rg33qxat7" path="res://pixelmix.ttf" id="2_b6d3l"]
+[ext_resource type="StyleBox" uid="uid://c3l5ty1irxcjf" path="res://btn_normal.tres" id="3_jj01m"]
+[ext_resource type="StyleBox" uid="uid://80rt25n1s11n" path="res://btn_hover.tres" id="4_pf2vj"]
+[ext_resource type="StyleBox" uid="uid://gjtgppvyvvkr" path="res://btn_press.tres" id="5_xwa7a"]
+[ext_resource type="StyleBox" uid="uid://bhrkcxo8v5ld4" path="res://remove_focus.tres" id="6_uxmnd"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pdwb")
+
+[node name="ColorRect" parent="." instance=ExtResource("1_gn2yp")]
+layout_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.819608, 0, 1)
+theme_override_fonts/font = ExtResource("2_b6d3l")
+theme_override_font_sizes/font_size = 8
+text = "Music + sfx by
+Rostro_the_musician
+You better believe it :D"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_fonts/font = ExtResource("2_b6d3l")
+theme_override_font_sizes/font_size = 8
+text = "Boring stuff made by me
+Manolore ('-')"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.0862745, 0.0901961, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_fonts/font = ExtResource("2_b6d3l")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("3_jj01m")
+theme_override_styles/hover = ExtResource("4_pf2vj")
+theme_override_styles/pressed = ExtResource("5_xwa7a")
+theme_override_styles/focus = ExtResource("6_uxmnd")
+text = "Return to Menu"
+
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

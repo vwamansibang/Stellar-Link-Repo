@@ -33,4 +33,4 @@ layer = 0
 descrip = "To complete a level
 you need to connect
 all planets together"
-tip = "Drag a line from any planet"
+tip = "Form a link from any planet"

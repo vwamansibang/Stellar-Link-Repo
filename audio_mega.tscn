@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://c278gc5j8rgsy"]
+
+[ext_resource type="AudioStream" uid="uid://cajb5vsjn58ee" path="res://Stellar Link OST-SFX/OST/Stellar link main menu ost.mp3" id="1_1rtrw"]
+[ext_resource type="Script" path="res://audio_mega.gd" id="1_bmu1q"]
+[ext_resource type="AudioStream" uid="uid://d1stjtfjipeqs" path="res://Stellar Link OST-SFX/OST/Stellar link ingame ost.mp3" id="2_lwpol"]
+[ext_resource type="AudioStream" uid="uid://cw4y6wbpahvcs" path="res://Stellar Link OST-SFX/SFX/Stellar Link Ring go big.mp3" id="3_akwnj"]
+[ext_resource type="AudioStream" uid="uid://dl8app3kpdmhx" path="res://Stellar Link OST-SFX/SFX/Stellar Link Ring go small.mp3" id="4_1g73f"]
+[ext_resource type="AudioStream" uid="uid://ccppothve0jrw" path="res://Stellar Link OST-SFX/SFX/Stellar Link Click_1.mp3" id="5_uhm0q"]
+[ext_resource type="AudioStream" uid="uid://bqhaot44gsyt" path="res://Stellar Link OST-SFX/SFX/Stellar Link Click_2.mp3" id="6_ciucp"]
+[ext_resource type="AudioStream" uid="uid://btocq52qfv2hy" path="res://Stellar Link OST-SFX/SFX/Stellar Link 8-bit pop.mp3" id="7_vbn4c"]
+[ext_resource type="AudioStream" uid="uid://gebjgbdw5o0d" path="res://Stellar Link OST-SFX/SFX/Stellar Link 8-bit EKSUPOLOSIOn.mp3" id="8_baw75"]
+[ext_resource type="AudioStream" uid="uid://b1b71ah6tjqle" path="res://Stellar Link OST-SFX/SFX/Stellar Link transition sub.mp3" id="9_horxe"]
+
+[node name="AudioMega" type="Node"]
+script = ExtResource("1_bmu1q")
+
+[node name="main_menu" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_1rtrw")
+volume_db = 0.75
+
+[node name="ingame" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_lwpol")
+volume_db = 0.8
+
+[node name="ring_grow" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_akwnj")
+volume_db = 11.0
+
+[node name="ring_shrink" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1g73f")
+volume_db = 11.0
+
+[node name="line_drag" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_uhm0q")
+volume_db = 7.5
+
+[node name="line_drop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ciucp")
+volume_db = 7.5
+
+[node name="btn_press" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_vbn4c")
+volume_db = 8.1
+
+[node name="boomfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_baw75")
+volume_db = 6.0
+
+[node name="fadefx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_horxe")
+volume_db = 8.0

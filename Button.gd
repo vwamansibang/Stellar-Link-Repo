@@ -31,6 +31,7 @@ func go_to_level():
 
 
 func _on_pressed():
+	audio_mega.get_node("btn_press").play()
 	if disabled:
 		return
 	go_to_level()

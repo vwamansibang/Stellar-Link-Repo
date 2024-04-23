@@ -35,6 +35,8 @@ func hide_ui():
 	if prevent_repeat:
 		return
 	prevent_repeat = true
+	audio_mega.get_node("fadefx").play()
+	
 	var tween = create_tween()
 	tween.set_ease(tween.EASE_OUT)
 	tween.set_trans(tween.TRANS_QUAD)
@@ -52,6 +54,8 @@ func reveal_ui():
 	if prevent_repeat:
 		return
 	prevent_repeat = true
+	audio_mega.get_node("fadefx").play()
+	
 	var tween = create_tween()
 	tween.set_ease(tween.EASE_OUT)
 	tween.set_trans(tween.TRANS_SPRING)
@@ -63,10 +67,12 @@ func reveal_ui():
 	prevent_repeat = false
 
 func _on_btn_start_pressed():
+#	audio_mega.get_node("btn_press").play()
 	hide_ui()
 
 
 func _on_btn_cont_pressed():
+	audio_mega.get_node("btn_press").play()
 	var scene = auto.next_scene
 	if auto.next_scene == null or scene == null:
 		scene = "res://select_level.tscn"
@@ -76,6 +82,8 @@ func _on_btn_cont_pressed():
 
 
 func _on_btn_menu_pressed():
+	audio_mega.get_node("btn_press").play()
 	load_trans.play_trans()
 	await load_trans.trans_finished
+	audio_mega.ingame = false
 	get_tree().change_scene_to_file("res://main_menu.tscn")

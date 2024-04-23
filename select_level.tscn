@@ -404,6 +404,15 @@ theme_override_constants/margin_right = 24
 layout_mode = 2
 theme_override_constants/separation = 8
 
+[node name="thankyou" type="Label" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)
+theme_override_fonts/font = ExtResource("2_oyyd5")
+theme_override_font_sizes/font_size = 8
+text = "Thank You for Playing"
+horizontal_alignment = 1
+
 [node name="menu_btn" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.980392, 0.992157, 1, 1)

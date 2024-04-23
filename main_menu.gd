@@ -50,10 +50,23 @@ func exit_screen():
 
 
 func _on_button_3_pressed():
+	audio_mega.get_node("btn_press").play()
 	exit_screen()
 
 
 func _on_button_pressed():
+	audio_mega.get_node("btn_press").play()
 	load_trans.play_trans()
 	await load_trans.trans_finished
 	get_tree().change_scene_to_file("res://select_level.tscn")
+
+
+func play_btn_audio():
+	audio_mega.get_node("btn_press").play()
+
+
+func _on_button_2_pressed():
+	audio_mega.get_node("btn_press").play()
+	load_trans.play_trans()
+	await load_trans.trans_finished
+	get_tree().change_scene_to_file("res://credits.tscn")

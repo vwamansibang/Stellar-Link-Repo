@@ -34,7 +34,7 @@ position = Vector2(56, 152)
 position = Vector2(136, 152)
 
 [node name="drone" parent="." instance=ExtResource("5_o00sa")]
-position = Vector2(160, 168)
+position = Vector2(88, 32)
 
 [node name="rock_big" parent="." instance=ExtResource("6_khkta")]
 position = Vector2(100, 154)
